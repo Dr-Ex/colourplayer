@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mouse Position</title>
-    <style>
-        html, body {
-            width:  100%;
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
-        }
-    </style>
+    <title>Color Transition</title>
+    <script src="script.js"></script>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
-    <script src="script.js"></script>
+    <form>
+        <label for="left-color">Left Color:</label>
+        <input type="color" id="left-color" name="left-color" value="#ff0000">
+
+        <label for="right-color">Right Color:</label>
+        <input type="color" id="right-color" name="right-color" value="#00ffff">
+
+        <button type="submit" formaction="colour.html">Apply Colors</button>
+    </form>
 </body>
 </html>
