@@ -76,8 +76,9 @@ canvas.addEventListener('mousemove', function(event) {
 
 
 canvas.addEventListener('touchmove', function(event) {
-  const x = event.raduisX - canvas.offsetLeft;
-  const y = event.radiusY - canvas.offsetTop;
+  const movedTouch = event.touches[0];
+  const x = movedTouch.pageX - canvas.offsetLeft;
+  const y = movedTouch.pageY - canvas.offsetTop;
 
   let red, green, blue;
 
