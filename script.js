@@ -55,22 +55,6 @@ canvas.addEventListener('mousemove', function(event) {
 
     let red, green, blue;
 
-    // if (x <= canvas.width / 2) {
-    //     // Left side color transition
-    //     const position = x / (canvas.width / 2);
-    //     const color = interpolateColors(leftColor, rightColor, position);
-    //     red = color.red;
-    //     green = color.green;
-    //     blue = color.blue;
-    // } else {
-    //     // Right side color transition
-    //     const position = (x - canvas.width / 2) / (canvas.width / 2);
-    //     const color = interpolateColors(rightColor, leftColor, position);
-    //     red = color.red;
-    //     green = color.green;
-    //     blue = color.blue;
-    // }
-
     const position = x / canvas.width;
     const color = interpolateColors(leftColor, rightColor, position);
     red = color.red;
@@ -88,4 +72,30 @@ canvas.addEventListener('mousemove', function(event) {
 
     // Draw rectangle to fill canvas
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+});
+
+
+canvas.addEventListener('touchmove', function(event) {
+  const x = event.raduisX - canvas.offsetLeft;
+  const y = event.radiusY - canvas.offsetTop;
+
+  let red, green, blue;
+
+  const position = x / canvas.width;
+  const color = interpolateColors(leftColor, rightColor, position);
+  red = color.red;
+  green = color.green;
+  blue = color.blue;
+
+  // Calculate color for current position
+  const positionY = y / canvas.height;
+  red = Math.round((1 - positionY) * red);
+  green = Math.round((1 - positionY) * green);
+  blue = Math.round((1 - positionY) * blue);
+
+  // Set fill style and global alpha
+  ctx.fillStyle = `rgb(${red}, ${green}, ${blue})`;
+
+  // Draw rectangle to fill canvas
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 });
