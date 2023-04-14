@@ -4,7 +4,7 @@
     <title>Pick Your Colour</title>
     <link rel="manifest" href="./manifest.webmanifest">
     <script src="index.js"></script>
-    <!-- <script src="script.js"></script> -->
+
     <style>
         body {
             background-color: black;
@@ -22,21 +22,26 @@
         }
     </style>
 </head>
+
 <body>
     <div id="wrapper">
+
         <form>
-            <label for="left-color">Left Color:</label>
-            <input type="color" id="left-color" name="left-color" value="#ff8000">
-
-            <br>
-
-            <label for="right-color">Right Color:</label>
-            <input type="color" id="right-color" name="right-color" value="#800080">
-
-            <br>
-
-            <button type="submit" formaction="colour.html">Apply Colors</button>
+            <div id="colors">
+              <div>
+                <label for="color-1">Color 1:</label>
+                <input type="color" id="color-1" name="color-1" value="#de970b">
+              </div>
+              <div>
+                <label for="color-2">Color 2:</label>
+                <input type="color" id="color-2" name="color-2" value="#a020f0">
+              </div>
+            </div>
+            <button type="button" id="add-color">Add Color</button>
+            <button type="submit" formaction="colour.html">Submit</button>
         </form>
+        
+        <script src="form.js"></script>
     </div>
 </body>
 </html>
